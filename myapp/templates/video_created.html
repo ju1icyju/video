@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Созданное видео</title>
+    {% load static %}
+</head>
+<body>
+    <h1>видео готово!</h1>
+    <p>Текст: {{ text }}</p>
+    <a href="{% static 'video/video_output.mp4' %}" download>Скачать видео</a>
+</body>
+</html>
