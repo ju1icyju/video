@@ -1,12 +1,13 @@
 from django.conf import settings
 from moviepy.editor import *
 from django.shortcuts import render
-from django.contrib.staticfiles.storage import staticfiles_storage
+from .models import PageRequest
 
 
 def create_video(request):
     if request.method == 'GET':
         text = request.GET.get('text', '')
+        PageRequest.objects.create(text=text)                                                                           # добавлям запрос в дб
         video_path = os.path.join(settings.STATIC_ROOT, 'video/video_test.mp4')
         video = VideoFileClip(video_path)                                                                               #  изначальное видео на которое ссылаемся
 
